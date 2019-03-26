@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ValueMap {
     private static final int[] START_VALUES = {2, 3, 4, 6, 7, 8, 9};
-    private static final int MAXPOWER = 500;
+    private static final int MAXPOWER = 10000;
 
     private static Map<Integer, List<PersistenceDigitPowerValue>> pdpvMap;
     private static Map<Integer, List<PersistenceDigitPowerValue>> reducedMap;
@@ -30,10 +30,9 @@ public class ValueMap {
         BigInteger multple = BigInteger.valueOf(digit);
         for (int i = 1; i <= MAXPOWER; i++) {
             BigInteger number = multple.pow(i);
-            String digitsMultiplied = PersistenceFinder.multiplyAllDigits(number.toString());
             // System.out.println("\t\t" + digit + "  \t" + i + " " + number + "  " + PersistenceFinder.isGoodPersistencePossibility(digitsMultiplied) + " " + digitsMultiplied);
-            if (PersistenceFinder.isGoodPersistencePossibility(digitsMultiplied)) {
-                values.add(new PersistenceDigitPowerValue(digit, i, digitsMultiplied, number));
+            if (PersistenceFinder.isGoodPersistencePossibility(number.toString())) {
+                values.add(new PersistenceDigitPowerValue(digit, i, number));
             }
         }
         return values;

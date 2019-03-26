@@ -14,40 +14,40 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ValueMapTest {
 
-    private static final PersistenceDigitPowerValue PDPV21 = new PersistenceDigitPowerValue(2, 1, "2", new BigInteger("2").pow(1));
-    private static final PersistenceDigitPowerValue PDPV22 = new PersistenceDigitPowerValue(2, 2, "4", new BigInteger("2").pow(2));
-    private static final PersistenceDigitPowerValue PDPV23 = new PersistenceDigitPowerValue(2, 3, "8", new BigInteger("2").pow(3));
-    private static final PersistenceDigitPowerValue PDPV24 = new PersistenceDigitPowerValue(2, 4, "6", new BigInteger("2").pow(4));
-    private static final PersistenceDigitPowerValue PDPV25 = new PersistenceDigitPowerValue(2, 5, "6", new BigInteger("2").pow(5));
-    private static final PersistenceDigitPowerValue PDPV26 = new PersistenceDigitPowerValue(2, 6, "24", new BigInteger("2").pow(6));
+    private static final PersistenceDigitPowerValue PDPV21 = new PersistenceDigitPowerValue(2, 1, new BigInteger("2").pow(1));
+    private static final PersistenceDigitPowerValue PDPV22 = new PersistenceDigitPowerValue(2, 2, new BigInteger("2").pow(2));
+    private static final PersistenceDigitPowerValue PDPV23 = new PersistenceDigitPowerValue(2, 3, new BigInteger("2").pow(3));
+    private static final PersistenceDigitPowerValue PDPV24 = new PersistenceDigitPowerValue(2, 4, new BigInteger("2").pow(4));
+    private static final PersistenceDigitPowerValue PDPV25 = new PersistenceDigitPowerValue(2, 5, new BigInteger("2").pow(5));
+    private static final PersistenceDigitPowerValue PDPV26 = new PersistenceDigitPowerValue(2, 6, new BigInteger("2").pow(6));
 
-    private static final PersistenceDigitPowerValue PDPV31 = new PersistenceDigitPowerValue(3, 1, "3", new BigInteger("3").pow(1));
-    private static final PersistenceDigitPowerValue PDPV32 = new PersistenceDigitPowerValue(3, 2, "9", new BigInteger("3").pow(2));
-    private static final PersistenceDigitPowerValue PDPV33 = new PersistenceDigitPowerValue(3, 3, "14", new BigInteger("3").pow(3));
-    private static final PersistenceDigitPowerValue PDPV34 = new PersistenceDigitPowerValue(3, 4, "8", new BigInteger("3").pow(4));
-    private static final PersistenceDigitPowerValue PDPV35 = new PersistenceDigitPowerValue(3, 5, "24", new BigInteger("3").pow(5));
-    private static final PersistenceDigitPowerValue PDPV36 = new PersistenceDigitPowerValue(3, 6, "126", new BigInteger("3").pow(6));
+    private static final PersistenceDigitPowerValue PDPV31 = new PersistenceDigitPowerValue(3, 1, new BigInteger("3").pow(1));
+    private static final PersistenceDigitPowerValue PDPV32 = new PersistenceDigitPowerValue(3, 2, new BigInteger("3").pow(2));
+    private static final PersistenceDigitPowerValue PDPV33 = new PersistenceDigitPowerValue(3, 3, new BigInteger("3").pow(3));
+    private static final PersistenceDigitPowerValue PDPV34 = new PersistenceDigitPowerValue(3, 4, new BigInteger("3").pow(4));
+    private static final PersistenceDigitPowerValue PDPV35 = new PersistenceDigitPowerValue(3, 5, new BigInteger("3").pow(5));
+    private static final PersistenceDigitPowerValue PDPV36 = new PersistenceDigitPowerValue(3, 6, new BigInteger("3").pow(6));
 
-    private static final PersistenceDigitPowerValue PDPV41 = new PersistenceDigitPowerValue(4, 1, "4", new BigInteger("4").pow(1));
-    private static final PersistenceDigitPowerValue PDPV42 = new PersistenceDigitPowerValue(4, 2, "6", new BigInteger("4").pow(2));
-    private static final PersistenceDigitPowerValue PDPV43 = new PersistenceDigitPowerValue(4, 3, "24", new BigInteger("4").pow(3));
-    private static final PersistenceDigitPowerValue PDPV44 = new PersistenceDigitPowerValue(4, 9, "384", new BigInteger("4").pow(9));
+    private static final PersistenceDigitPowerValue PDPV41 = new PersistenceDigitPowerValue(4, 1, new BigInteger("4").pow(1));
+    private static final PersistenceDigitPowerValue PDPV42 = new PersistenceDigitPowerValue(4, 2, new BigInteger("4").pow(2));
+    private static final PersistenceDigitPowerValue PDPV43 = new PersistenceDigitPowerValue(4, 3, new BigInteger("4").pow(3));
+    private static final PersistenceDigitPowerValue PDPV44 = new PersistenceDigitPowerValue(4, 9, new BigInteger("4").pow(9));
 
-    private static final PersistenceDigitPowerValue PDPV61 = new PersistenceDigitPowerValue(6, 1, "6", new BigInteger("6").pow(1));
-    private static final PersistenceDigitPowerValue PDPV62 = new PersistenceDigitPowerValue(6, 2, "18", new BigInteger("6").pow(2));
-    private static final PersistenceDigitPowerValue PDPV63 = new PersistenceDigitPowerValue(6, 3, "12", new BigInteger("6").pow(3));
+    private static final PersistenceDigitPowerValue PDPV61 = new PersistenceDigitPowerValue(6, 1, new BigInteger("6").pow(1));
+    private static final PersistenceDigitPowerValue PDPV62 = new PersistenceDigitPowerValue(6, 2, new BigInteger("6").pow(2));
+    private static final PersistenceDigitPowerValue PDPV63 = new PersistenceDigitPowerValue(6, 3, new BigInteger("6").pow(3));
 
-    private static final PersistenceDigitPowerValue PDPV71 = new PersistenceDigitPowerValue(7, 1, "7", new BigInteger("7").pow(1));
-    private static final PersistenceDigitPowerValue PDPV72 = new PersistenceDigitPowerValue(7, 2, "36", new BigInteger("7").pow(2));
-    private static final PersistenceDigitPowerValue PDPV73 = new PersistenceDigitPowerValue(7, 3, "36", new BigInteger("7").pow(3));
+    private static final PersistenceDigitPowerValue PDPV71 = new PersistenceDigitPowerValue(7, 1, new BigInteger("7").pow(1));
+    private static final PersistenceDigitPowerValue PDPV72 = new PersistenceDigitPowerValue(7, 2, new BigInteger("7").pow(2));
+    private static final PersistenceDigitPowerValue PDPV73 = new PersistenceDigitPowerValue(7, 3, new BigInteger("7").pow(3));
 
-    private static final PersistenceDigitPowerValue PDPV81 = new PersistenceDigitPowerValue(8, 1, "8", new BigInteger("8").pow(1));
-    private static final PersistenceDigitPowerValue PDPV82 = new PersistenceDigitPowerValue(8, 2, "24", new BigInteger("8").pow(2));
-    private static final PersistenceDigitPowerValue PDPV83 = new PersistenceDigitPowerValue(8, 3, "384", new BigInteger("8").pow(3));
+    private static final PersistenceDigitPowerValue PDPV81 = new PersistenceDigitPowerValue(8, 1, new BigInteger("8").pow(1));
+    private static final PersistenceDigitPowerValue PDPV82 = new PersistenceDigitPowerValue(8, 2, new BigInteger("8").pow(2));
+    private static final PersistenceDigitPowerValue PDPV83 = new PersistenceDigitPowerValue(8, 3, new BigInteger("8").pow(3));
 
-    private static final PersistenceDigitPowerValue PDPV91 = new PersistenceDigitPowerValue(9, 1, "9", new BigInteger("9").pow(1));
-    private static final PersistenceDigitPowerValue PDPV92 = new PersistenceDigitPowerValue(9, 2, "8", new BigInteger("9").pow(2));
-    private static final PersistenceDigitPowerValue PDPV93 = new PersistenceDigitPowerValue(9, 3, "126", new BigInteger("9").pow(3));
+    private static final PersistenceDigitPowerValue PDPV91 = new PersistenceDigitPowerValue(9, 1, new BigInteger("9").pow(1));
+    private static final PersistenceDigitPowerValue PDPV92 = new PersistenceDigitPowerValue(9, 2, new BigInteger("9").pow(2));
+    private static final PersistenceDigitPowerValue PDPV93 = new PersistenceDigitPowerValue(9, 3, new BigInteger("9").pow(3));
 
     private static final List<PersistenceDigitPowerValue> LIST2 = new ArrayList<>();
     private static final List<PersistenceDigitPowerValue> LIST3 = new ArrayList<>();

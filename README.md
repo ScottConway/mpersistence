@@ -1,4 +1,5 @@
 # mpersistence
+
 Inspired by a Numberphile video about multiplicative persistence.  
 The purpose was to find the combinations of numbers
 that could be put together to test the multipliative persistence of a number.  
@@ -19,7 +20,7 @@ append them together in a string and test each to see if it has a high persisten
 That way I would have fewer numbers to test and would be much quicker than brute force. 
 But what I found though was that I had very few combinations - 28 to be precise with 
 the largest number I could make by combining the largest for each number
- whould have been 56 digits.  
+ whould have been 133 digits.  
  
 To me this makes sense as when your as your exponents get bigger and bigger the chances of 
 having a 0 or 5 in the result become 100%.  But because this problem apparently 
@@ -28,3 +29,11 @@ something.
 
 So feel free to look over my code and let me know if there is a flaw in 
 my approach to this problem.    
+
+# What's new
+
+**3/26/2019** - Realized a bug in my logic in that when I got the powers of the a
+digit I had already done the first iteration of multiplicative persistence.   
+Changed program to take that into account and I did come up with more digits (133 vs 56)
+but that is well short of the 300 that has been performed so still feel like 
+I am missing something.
