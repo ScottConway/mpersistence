@@ -3,6 +3,9 @@ package org.conway.multiplative.persistence;
 import java.math.BigInteger;
 
 public class PersistenceFinder {
+    private PersistenceFinder() {
+    }
+
     public static int findPersistenceValue(String number) {
         if (number.length() == 1)
             return 0;
@@ -13,7 +16,7 @@ public class PersistenceFinder {
     }
 
     public static String multiplyAllDigits(String number) {
-        BigInteger bigNum = new BigInteger("1");
+        BigInteger bigNum = BigInteger.ONE;
         for (Character digit : number.toCharArray()) {
             bigNum = bigNum.multiply(new BigInteger(digit.toString()));
         }
