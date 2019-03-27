@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ValueMap {
     private static final int[] START_VALUES = {2, 3, 4, 6, 7, 8, 9};
-    private static final int MAXPOWER = 10000;
+    private static final int MAXPOWER = 500;
 
     private static Map<Integer, List<PersistenceDigitPowerValue>> pdpvMap;
     private static Map<Integer, List<PersistenceDigitPowerValue>> reducedMap;
@@ -14,6 +14,10 @@ public class ValueMap {
     static {
         buildMap();
         reducedMap = Collections.unmodifiableMap(removeDuplicates(pdpvMap));
+    }
+
+    public static Map<Integer, List<PersistenceDigitPowerValue>> getReducedMap() {
+        return reducedMap;
     }
 
     private static void buildMap() {
@@ -28,6 +32,7 @@ public class ValueMap {
     private static List<PersistenceDigitPowerValue> buildPowerList(int digit) {
         List<PersistenceDigitPowerValue> values = new ArrayList<>(MAXPOWER);
         BigInteger multple = BigInteger.valueOf(digit);
+        values.add(new PersistenceDigitPowerValue(digit, 0, BigInteger.ONE)); // add this for each digit to get an empty string.
         for (int i = 1; i <= MAXPOWER; i++) {
             BigInteger number = multple.pow(i);
             // System.out.println("\t\t" + digit + "  \t" + i + " " + number + "  " + PersistenceFinder.isGoodPersistencePossibility(digitsMultiplied) + " " + digitsMultiplied);
@@ -58,7 +63,7 @@ public class ValueMap {
 
         for (Map.Entry<Integer, List<PersistenceDigitPowerValue>> entry : initialMap.entrySet()) {
             List<PersistenceDigitPowerValue> reducedList = entry.getValue().stream()
-                    .filter(pdpv -> isUniqueValueInList(pdpv, initialMap))
+                    .filter(pdpv -> pdpv.getPower() == 0 || isUniqueValueInList(pdpv, initialMap))
                     .collect(Collectors.toList());
             if (!reducedList.isEmpty()) {
                 uniqueMap.put(entry.getKey(), reducedList);
@@ -77,5 +82,7 @@ public class ValueMap {
 
     public static void main(String[] args) {
         printMapInfo();
+        System.out.println();
+        NumberListBuilder.printNumberPVs();
     }
 }
