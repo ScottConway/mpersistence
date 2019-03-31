@@ -1,7 +1,10 @@
 package org.conway.multiplative.persistence;
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import java.math.BigInteger;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class ValueMap {
@@ -81,8 +84,13 @@ public class ValueMap {
     }
 
     public static void main(String[] args) {
+        StopWatch stopWatch = new StopWatch();
+
+        stopWatch.start();
         printMapInfo();
         System.out.println();
         NumberListBuilder.printNumberPVs();
+        stopWatch.stop();
+        System.out.println(String.format("\n\nPersistence completed in %.3f seconds", stopWatch.getTime(TimeUnit.MILLISECONDS) / 1000.0));
     }
 }
