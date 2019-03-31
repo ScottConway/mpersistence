@@ -37,3 +37,9 @@ digit I had already done the first iteration of multiplicative persistence.
 Changed program to take that into account and I did come up with more digits (133 vs 56)
 but that is well short of the 300 that has been performed so still feel like 
 I am missing something.
+
+**3/30/2019** - Made one more change that really speeded up the program.  I 
+realized that for the 2, 3, and 4 I only need a single digit because beyond that
+it is a combination of existing numbers (4^2 is the same as 2\*4, 4^3 is the 
+same as 2\*4\*8, 4^4 is the same as 4\*8\*8, etc.)  This gave fewer combinations 
+to put together to test yielding a seven fold speed increase on my mac mini.  

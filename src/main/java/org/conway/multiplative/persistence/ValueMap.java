@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class ValueMap {
     private static final int[] START_VALUES = {2, 3, 4, 6, 7, 8, 9};
+    private static final List<Integer> SHORT_LIST = Arrays.asList(2, 3, 4);
     private static final int MAXPOWER = 500;
 
     private static Map<Integer, List<PersistenceDigitPowerValue>> pdpvMap;
@@ -36,7 +37,8 @@ public class ValueMap {
         List<PersistenceDigitPowerValue> values = new ArrayList<>(MAXPOWER);
         BigInteger multple = BigInteger.valueOf(digit);
         values.add(new PersistenceDigitPowerValue(digit, 0, BigInteger.ONE)); // add this for each digit to get an empty string.
-        for (int i = 1; i <= MAXPOWER; i++) {
+        int maxPower = SHORT_LIST.contains(digit) ? 1 : MAXPOWER;
+        for (int i = 1; i <= maxPower; i++) {
             BigInteger number = multple.pow(i);
             // System.out.println("\t\t" + digit + "  \t" + i + " " + number + "  " + PersistenceFinder.isGoodPersistencePossibility(digitsMultiplied) + " " + digitsMultiplied);
             if (PersistenceFinder.isGoodPersistencePossibility(number.toString())) {
