@@ -24,6 +24,7 @@ public class PersistenceFinder {
     }
 
     public static boolean isGoodPersistencePossibility(String number) {
-        return !number.contains("0") && !number.contains("5");
+        return true;
+        //return !number.contains("0") && !number.contains("5");
     }
 }

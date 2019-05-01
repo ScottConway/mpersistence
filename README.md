@@ -42,4 +42,22 @@ I am missing something.
 realized that for the 2, 3, and 4 I only need a single digit because beyond that
 it is a combination of existing numbers (4^2 is the same as 2\*4, 4^3 is the 
 same as 2\*4\*8, 4^4 is the same as 4\*8\*8, etc.)  This gave fewer combinations 
-to put together to test yielding a seven fold speed increase on my mac mini.  
+to put together to test yielding a seven fold speed increase on my mac mini.
+
+**4/30/2019** - The idea that this could be so simple has bugged me for a while 
+so I wrote a unit test that proved myself wrong.  I collected the smallest value 
+for each persistence level and compared them with the known list from [wikipedia](https://en.wikipedia.org/wiki/Persistence_of_a_number) 
+and found the descrpencies.   First was at persistence of 7 the smallest value is 68889
+but I got 246889.   Doing the math I found that 8^3 = 512 so my theory about 5 being
+a bad digit was okay but not as a digit in a building block because when I 
+multiplied that by the rest of the digits I got 27648 - which is a good number.
+
+The same went for 0 because after removing the check for 5 the next descrepency was the persistence level 10 where 
+the smallest number is 3778888999 and I got 24666778899.  Here again doing the math I 
+saw that 8^4 = 4096 so I threw out that building block but multiplying all the digits 
+together removed the zero.    
+
+So I removed the check and now consider all numbers in the building blocks (still only 
+taking a single 2, 3, 4 though) and while it is consideribly slower, 34 seconds to compute 
+a max of 30 digits in a building block,  I still see a limit where I stop finding 
+persistent numbers because at a certain level a zero becomes inevitble when multiplying out.    

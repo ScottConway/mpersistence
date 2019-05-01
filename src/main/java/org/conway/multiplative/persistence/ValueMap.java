@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class ValueMap {
     private static final int[] START_VALUES = {2, 3, 4, 6, 7, 8, 9};
     private static final List<Integer> SHORT_LIST = Arrays.asList(2, 3, 4);
-    private static final int MAXPOWER = 500;
+    private static final int MAXPOWER = 30;
 
     private static Map<Integer, List<PersistenceDigitPowerValue>> pdpvMap;
     private static Map<Integer, List<PersistenceDigitPowerValue>> reducedMap;
