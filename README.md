@@ -2,7 +2,7 @@
 
 Inspired by a Numberphile video about multiplicative persistence.  
 The purpose was to find the combinations of numbers
-that could be put together to test the multipliative persistence of a number.  
+that could be put together to test the multiplicative persistence of a number.  
 
 You can find out more about multiplicative persistence either from the 
 [Numberphile youtube video](https://www.youtube.com/watch?v=Wim9WJeDTHQ&t=603s) 
@@ -47,17 +47,17 @@ to put together to test yielding a seven fold speed increase on my mac mini.
 **4/30/2019** - The idea that this could be so simple has bugged me for a while 
 so I wrote a unit test that proved myself wrong.  I collected the smallest value 
 for each persistence level and compared them with the known list from [wikipedia](https://en.wikipedia.org/wiki/Persistence_of_a_number) 
-and found the descrpencies.   First was at persistence of 7 the smallest value is 68889
+and found the discrepancies.   First was at persistence of 7 the smallest value is 68889
 but I got 246889.   Doing the math I found that 8^3 = 512 so my theory about 5 being
 a bad digit was okay but not as a digit in a building block because when I 
 multiplied that by the rest of the digits I got 27648 - which is a good number.
 
-The same went for 0 because after removing the check for 5 the next descrepency was the persistence level 10 where 
+The same went for 0 because after removing the check for 5 the next discrepancy was the persistence level 10 where 
 the smallest number is 3778888999 and I got 24666778899.  Here again doing the math I 
 saw that 8^4 = 4096 so I threw out that building block but multiplying all the digits 
 together removed the zero.    
 
 So I removed the check and now consider all numbers in the building blocks (still only 
-taking a single 2, 3, 4 though) and while it is consideribly slower, 34 seconds to compute 
+taking a single 2, 3, 4 though) and while it is considerably slower, 34 seconds to compute 
 a max of 30 digits in a building block,  I still see a limit where I stop finding 
 persistent numbers because at a certain level a zero becomes inevitble when multiplying out.    
